@@ -33,6 +33,6 @@ or <br>
 
 ### What is does?
 
-Date Input -> Time/Time Range Input (minute scale) -> Save the files to ./downloads
+Date Input -> Time/Time Range Input (minute scale) -> Save the files to ./downloads <br>
 Uses Local Time <br>
-File name: <Last modified date> <version id>.ext
+File name: <Last modified date> <version id>.ext<br>
