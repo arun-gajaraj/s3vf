@@ -1,2 +1,2 @@
 # S3VersionFetcher
-A simple command line utility to fetch the versions of an s3 object of a particular time.
+A simple command line utility to fetch the s3 object versions of a particular time.
