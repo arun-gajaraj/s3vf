@@ -30,3 +30,9 @@ or
 `go run s3vf.go`<br>
 or <br>
 `s3vf`
+
+### What is does?
+
+Date Input -> Time/Time Range Input (minute scale) -> Save the files to ./downloads
+Uses Local Time
+File name: <Last modified date> <version id>.ext
