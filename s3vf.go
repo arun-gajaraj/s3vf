@@ -20,19 +20,15 @@ var (
 var versions, versionsToDownload []*s3.ObjectVersion
 
 func main() {
+	log.Info("Hello!")
 	utils.SetArgs(s3c)
 
-	log.Info("Welcome!")
-
 	if os.Getenv("AWS_ACCESS_KEY_ID") == "" || os.Getenv("AWS_SECRET_ACCESS_KEY") == "" {
-		log.Fatal("AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY is not set. set these env variables and try again")
+		log.Fatal("AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY/AWS_SESSION_TOKEN is not set. set these variables and try again")
 	}
 
-	// for {
 	GetInpDate(&date)
-
 	versions = utils.GetAllVersionsTill(s3c, date)
-
 	from, to := GetInpTime(date)
 
 	spin := chin.New()
@@ -40,10 +36,7 @@ func main() {
 	defer spin.Stop()
 
 	versionsToDownload = filterVersions(versions, from, to)
-
 	utils.DownloadVersions(s3c, versionsToDownload)
-
-	// }
 }
 
 func filterVersions(allVersions []*s3.ObjectVersion, from time.Time, to time.Time) []*s3.ObjectVersion {
@@ -61,7 +54,6 @@ func GetInpDate(dateToSet *time.Time) string {
 	var dateStr string
 	fmt.Println("Enter date of the version(s) to get [YYYY-MM-DD]:")
 	fmt.Scanln(&dateStr)
-	// enteredDate = &dateStr
 
 	date, err := time.Parse("2006-01-02", dateStr)
 	if err != nil {
