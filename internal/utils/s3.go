@@ -34,15 +34,11 @@ func GetAllVersionsTill(s3c *S3Config, d time.Time) []*s3.ObjectVersion {
 
 	var allVersions []*s3.ObjectVersion
 
-	// Initialize a new session in the us-west-2 region
 	sess := session.Must(session.NewSession(&aws.Config{
 		Region: aws.String(s3c.Region),
 	}))
 
-	// Create a new S3 client
 	svc := s3.New(sess)
-
-	// Prepare the input parameters for ListObjectVersions
 	input := &s3.ListObjectVersionsInput{
 		Bucket: aws.String(s3c.Bucket),
 		Prefix: aws.String(s3c.Key),
