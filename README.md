@@ -1,12 +1,17 @@
 # s3vf
-A simple command line utility to download the versions of an s3 object versions with their Last Modified Date.
+A simple command line utility to download the old versions of a file from s3 when the aws console can't help.
 
 
 #### Pre-req:
 
-Set the env vars for aws: 
+Env Vars: 
 - AWS_ACCESS_KEY_ID
-- AWS_SECRET_ACCESS_KEY<br>
+- AWS_SECRET_ACCESS_KEY
+- AWS_SESSION_TOKEN
+- S3_BUCKET_NAME    [optional]
+- S3_BUCKET_REGION  [optional]
+- S3_OBJECT_KEY     [optional]
+- INDENT_JSON       [optional; example: true]<br>
 
 #### to run from source:
 
