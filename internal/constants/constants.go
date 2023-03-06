@@ -5,5 +5,5 @@ const (
 	MaxVersions = 500000
 
 	// Indent JSON files
-	IndentJSON = false
+	IndentJSON = true
 )

@@ -134,9 +134,12 @@ func downloader(svc *s3.S3, cfg *S3Config, jobs <-chan *s3.ObjectVersion, result
 			fmt.Println("error creating file:", err)
 		}
 
-		indent, err := strconv.ParseBool(os.Getenv(`INDENT_JSON`))
-		if err != nil {
-			log.WithError(err).Error(`error parsing env var INDENT_JSON`)
+		indent := constants.IndentJSON
+		if os.Getenv(`INDENT_JSON`) != "" {
+			indent, err = strconv.ParseBool(os.Getenv(`INDENT_JSON`))
+			if err != nil {
+				log.WithError(err).Error(`error parsing env var INDENT_JSON`)
+			}
 		}
 
 		if constants.IndentJSON || indent {
