@@ -17,22 +17,15 @@ Env Vars:
 
 `go run s3vf.go <aws_s3_bucket_name> <aws_s3_bucket_region> <s3_filename>`
 
-or 
-
-#### To run from binary:
-
-`s3vf <aws_s3_bucket_name> <aws_s3_bucket_region> <s3_filename>`
-
-or 
-
-#### run w/o args to enter manually
+or <br>
 
 `go run s3vf.go`<br>
-or <br>
-`s3vf`
 
-### What is does?
+### How it works?
 
-Date Input -> Time/Time Range Input (minute scale) -> Save the files to ./downloads <br>
-Uses Local Time <br>
-File name: [Last modified date in LocalTime] - [version id].ext<br>
+1. Set the Variables and run <br>
+2. Enter the Date and Time Range and the versions within that time will be downloaded to ./downloads <br>
+  <br>
+ - Files will be named: [version-last-modified-time] - [version-id].extension <br>
+ - Uses Local Time <br>
+ - Option to have the JSON file Indented <br>
