@@ -35,4 +35,4 @@ or <br>
 
 Date Input -> Time/Time Range Input (minute scale) -> Save the files to ./downloads <br>
 Uses Local Time <br>
-File name: <Last modified date> <version id>.ext<br>
+File name: [Last modified date in LocalTime] - [version id].ext<br>
