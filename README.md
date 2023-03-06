@@ -15,7 +15,7 @@ Env Vars:
 
 #### to run from source:
 
-`go run s3vf.go <aws_s3_bucket_name> <aws_s3_bucket_region> <s3_filename>`
+`go run s3vf.go <s3_bucket_name> <s3_bucket_region> <object_key>`
 
 or <br>
 
