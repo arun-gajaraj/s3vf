@@ -51,12 +51,13 @@ func GetAllVersionsTill(s3c *S3Config, d time.Time) []*s3.ObjectVersion {
 
 		if page.Versions[0].LastModified.Local().Before(d.Local()) {
 
+			fmt.Print("\n")
 			log.Info(`got enough versions till ` + page.Versions[0].LastModified.Local().String())
 			return false
 		}
 
 		// CAN REMOVE THIS
-		fmt.Println(len(allVersions))
+		fmt.Print("\r", len(allVersions))
 		if len(allVersions) > constants.MaxVersions {
 			log.Errorf("version too old, crossing %d versions earlier, stopping", constants.MaxVersions)
 			return false
