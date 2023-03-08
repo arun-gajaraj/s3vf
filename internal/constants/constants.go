@@ -2,7 +2,7 @@ package constants
 
 const (
 	// Limit
-	MaxVersions = 500000
+	MaxVersions = 800000
 
 	// Indent JSON files
 	IndentJSON = true
