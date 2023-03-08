@@ -56,8 +56,8 @@ func GetAllVersionsTill(s3c *S3Config, d time.Time) []*s3.ObjectVersion {
 			return false
 		}
 
-		// CAN REMOVE THIS
-		fmt.Print("\r", len(allVersions))
+		fmt.Printf("\rloaded %d versions from the current", len(allVersions))
+		// CAN REMOVE THIS MaxVersions check
 		if len(allVersions) > constants.MaxVersions {
 			log.Errorf("version too old, crossing %d versions earlier, stopping", constants.MaxVersions)
 			return false
