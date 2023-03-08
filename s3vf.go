@@ -28,8 +28,8 @@ func main() {
 	}
 
 	GetInpDate(&date)
-	versions = utils.GetAllVersionsTill(s3c, date)
 	from, to := GetInpTime(date)
+	versions = utils.GetAllVersionsTill(s3c, date)
 
 	spin := chin.New()
 	go spin.Start()
